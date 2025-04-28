@@ -1,0 +1,5 @@
+requests>=2.28.0
+python-dotenv>=0.20.0
+pathlib>=1.0.1
+pdfkit>=1.0.0
+beautifulsoup4>=4.11.0
