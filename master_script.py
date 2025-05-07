@@ -13,7 +13,7 @@ from output_generator.html_generator import HTMLGenerator
 from output_generator.html_to_pdf_converter import HTMLToPDFConverter
 from utils.state_manager import StateManager
 from utils.logger import setup_logging
-from setup.config import DEFAULT_DAYS
+from setup.config import DEFAULT_DAYS, NEW_CONTENT_DIR, UPDATED_CONTENT_DIR
 
 def parse_arguments():
     """Parse command-line arguments.
@@ -82,9 +82,21 @@ def parse_arguments():
         help="Skip checking for pages missing from state file"
     )
 
+    parser.add_argument(
+        "--import_cookies",
+        action="store_true",
+        help="Import cookies from browser to help with CAPTCHA/verification issues"
+    )
+
+    parser.add_argument(
+        "--refresh_cookies",
+        action="store_true",
+        help="Refresh cookies by opening browser and guiding through import"
+    )
+
     return parser.parse_args()
 
-def process_page(page, state_manager, html_generator, html_to_pdf_converter=None, html_only=False, force_space=None):
+def process_page(page, state_manager, html_generator, html_to_pdf_converter=None, html_only=False, force_space=None, force_process=False):
     """Process a single page.
 
     Args:
@@ -94,6 +106,7 @@ def process_page(page, state_manager, html_generator, html_to_pdf_converter=None
         html_to_pdf_converter (HTMLToPDFConverter, optional): HTML to PDF converter instance
         html_only (bool, optional): Whether to generate only HTML. Defaults to False.
         force_space (str, optional): If provided, forces processing of all pages in this space
+        force_process (bool, optional): If True, skips state check and forces processing. Useful for first-time processing.
 
     Returns:
         tuple: (processed, stats_dict) where processed is a boolean indicating if the page was processed,
@@ -109,22 +122,39 @@ def process_page(page, state_manager, html_generator, html_to_pdf_converter=None
         "pdf_failed": 0
     }
 
-    # Check if the page needs to be processed
-    if not state_manager.should_process_page(page, force_space):
-        stats["html_skipped"] += 1
-        stats["pdf_skipped"] += 1
-        return False, stats
-
     page_id = page["id"]
     page_title = page["title"]
 
-    logging.info(f"Processing page '{page_title}' (ID: {page_id})")
+    # Determine if the page is new or updated
+    content_type = None
+    if force_process:
+        # If force_process is True, treat as new
+        content_type = "new"
+    else:
+        # Check if the page needs to be processed
+        if not state_manager.should_process_page(page, force_space):
+            stats["html_skipped"] += 1
+            stats["pdf_skipped"] += 1
+            return False, stats
+
+        # Determine if the page is new or updated
+        page_state = state_manager.get_page_state(page_id)
+        if page_state is None:
+            # Page is not in state file, so it's new
+            content_type = "new"
+            logging.info(f"New page: '{page_title}' (ID: {page_id})")
+        else:
+            # Page is in state file, so it's updated
+            content_type = "updated"
+            logging.info(f"Updated page: '{page_title}' (ID: {page_id})")
+
+    logging.info(f"Processing {content_type} page '{page_title}' (ID: {page_id})")
 
     output_paths = {}
 
     try:
         # Always generate HTML first
-        html_path = html_generator.generate_html(page)
+        html_path = html_generator.generate_html(page, content_type=content_type)
         if not html_path:
             logging.error(f"Failed to generate HTML for page '{page_title}' (ID: {page_id})")
             stats["html_failed"] += 1
@@ -140,17 +170,36 @@ def process_page(page, state_manager, html_generator, html_to_pdf_converter=None
             from pathlib import Path
             from setup.config import PDF_OUTPUT_DIR
 
-            # Get the space directory name from the HTML path
+            # Get the space directory name and subdirectory (if any) from the HTML path
             html_path_obj = Path(html_path)
-            space_dir_name = html_path_obj.parent.name
-            filename = html_path_obj.name.replace(".html", ".pdf")
 
-            # Create space directory in PDF output if it doesn't exist
-            pdf_space_dir = PDF_OUTPUT_DIR / space_dir_name
-            pdf_space_dir.mkdir(exist_ok=True)
+            # Check if the HTML path includes a content type subdirectory
+            if content_type in [NEW_CONTENT_DIR, UPDATED_CONTENT_DIR]:
+                # Path structure is: output/html/space_key/content_type/filename.html
+                space_dir_name = html_path_obj.parent.parent.name
+                content_type_dir = html_path_obj.parent.name  # 'new' or 'updated'
 
-            # Set the PDF output path
-            pdf_path = str(pdf_space_dir / filename)
+                # Create space and content type directories in PDF output if they don't exist
+                pdf_space_dir = PDF_OUTPUT_DIR / space_dir_name
+                pdf_space_dir.mkdir(exist_ok=True)
+
+                pdf_content_type_dir = pdf_space_dir / content_type_dir
+                pdf_content_type_dir.mkdir(exist_ok=True)
+
+                # Set the PDF output path
+                filename = html_path_obj.name.replace(".html", ".pdf")
+                pdf_path = str(pdf_content_type_dir / filename)
+            else:
+                # Standard path structure: output/html/space_key/filename.html
+                space_dir_name = html_path_obj.parent.name
+                filename = html_path_obj.name.replace(".html", ".pdf")
+
+                # Create space directory in PDF output if it doesn't exist
+                pdf_space_dir = PDF_OUTPUT_DIR / space_dir_name
+                pdf_space_dir.mkdir(exist_ok=True)
+
+                # Set the PDF output path
+                pdf_path = str(pdf_space_dir / filename)
 
             # Convert HTML to PDF
             logging.info(f"Converting HTML to PDF: {html_path} -> {pdf_path}")
@@ -187,6 +236,20 @@ def main():
 
     # Initialize components
     client = ConfluenceClient()
+
+    # Handle cookie operations if requested
+    if args.import_cookies or args.refresh_cookies:
+        from utils.cookie_manager import main as cookie_manager_main
+
+        if args.import_cookies:
+            logger.info("Starting cookie import process...")
+            cookie_manager_main('import')
+            logger.info("Cookie import process completed. Continuing with main script...")
+        elif args.refresh_cookies:
+            logger.info("Starting cookie refresh process...")
+            cookie_manager_main('refresh')
+            logger.info("Cookie refresh process completed. Continuing with main script...")
+
     state_manager = StateManager()
     html_generator = HTMLGenerator()
 
@@ -367,15 +430,46 @@ def main():
                 logger.info(f"Found {len(filtered_pages)} pages updated in the last {args.no_days} days")
                 pages = filtered_pages
 
-            for page in pages:
-                processed, page_stats = process_page(page, state_manager, html_generator, html_to_pdf_converter, args.html, args.space)
-                # Update global stats
-                for key, value in page_stats.items():
-                    stats[key] += value
-                if processed:
-                    stats["processed"] += 1
-                else:
-                    stats["skipped"] += 1
+            # Check if this is the first time processing this space
+            # Get current state to check if pages are already in state
+            current_state = state_manager.load_state()
+
+            # Check if any pages from this space are in the state
+            space_pages_in_state = any(
+                current_state.get(page["id"], {}).get("space_key") == args.space
+                for page in pages
+            )
+
+            # If this is the first time processing this space, we can optimize
+            if not space_pages_in_state and pages:
+                logger.info(f"First time processing space '{args.space}' - optimizing state checks")
+
+                # Process all pages without redundant state checks
+                for page in pages:
+                    # Force processing by passing force_process=True
+                    processed, page_stats = process_page(page, state_manager, html_generator,
+                                                        html_to_pdf_converter, args.html,
+                                                        force_space=args.space, force_process=True)
+                    # Update global stats
+                    for key, value in page_stats.items():
+                        stats[key] += value
+                    if processed:
+                        stats["processed"] += 1
+                    else:
+                        stats["skipped"] += 1
+            else:
+                # Normal processing with state checks
+                for page in pages:
+                    processed, page_stats = process_page(page, state_manager, html_generator,
+                                                        html_to_pdf_converter, args.html,
+                                                        force_space=args.space)
+                    # Update global stats
+                    for key, value in page_stats.items():
+                        stats[key] += value
+                    if processed:
+                        stats["processed"] += 1
+                    else:
+                        stats["skipped"] += 1
 
         # Case 4: Fetch updated pages across all spaces and pages missing from state
         # This is the default behavior when no specific options are provided
@@ -432,37 +526,74 @@ def main():
                         stats["total_pages_from_api"] += len(space_pages)
                     else:
                         logger.info(f"No pages found in space '{space_key}' when checking for missing pages")
+                        continue  # Skip to next space if no pages found
+
+                    # Check if this is the first time processing this space
+                    space_pages_in_state = any(
+                        current_state.get(page["id"], {}).get("space_key") == space_key
+                        for page in space_pages
+                    )
 
                     # Count how many new pages we found in this space
                     new_pages_count = 0
 
-                    # Process each page that's not in the state file and not already processed
-                    for page in space_pages:
-                        page_id = page["id"]
+                    # If this is the first time processing this space, we can optimize
+                    if not space_pages_in_state:
+                        logger.info(f"First time processing space '{space_key}' - optimizing state checks")
 
-                        # Skip if we've already processed this page
-                        if page_id in processed_page_ids:
-                            continue
+                        # Filter out pages we've already processed
+                        new_pages = [page for page in space_pages if page["id"] not in processed_page_ids]
 
-                        # Add to processed set to avoid duplicates
-                        processed_page_ids.add(page_id)
+                        if new_pages:
+                            logger.info(f"Found {len(new_pages)} new pages in space '{space_key}'")
+                            new_pages_count = len(new_pages)
 
-                        # Check if page is in state file
-                        if page_id not in current_state:
-                            logger.info(f"Found page '{page['title']}' (ID: {page_id}) missing from state file")
-                            new_pages_count += 1
+                            # Process all pages without redundant state checks
+                            for page in new_pages:
+                                # Add to processed set to avoid duplicates
+                                processed_page_ids.add(page["id"])
 
-                            # Process the page
-                            processed, page_stats = process_page(page, state_manager, html_generator, html_to_pdf_converter, args.html)
-                            # Update global stats
-                            for key, value in page_stats.items():
-                                stats[key] += value
-                            if processed:
-                                stats["processed"] += 1
-                            else:
-                                stats["skipped"] += 1
+                                # Process the page with force_process=True to skip state check
+                                processed, page_stats = process_page(page, state_manager, html_generator,
+                                                                    html_to_pdf_converter, args.html,
+                                                                    force_process=True)
+                                # Update global stats
+                                for key, value in page_stats.items():
+                                    stats[key] += value
+                                if processed:
+                                    stats["processed"] += 1
+                                else:
+                                    stats["skipped"] += 1
+                    else:
+                        # Normal processing with state checks
+                        # Process each page that's not in the state file and not already processed
+                        for page in space_pages:
+                            page_id = page["id"]
 
-                    logger.info(f"Found {new_pages_count} new pages in space '{space_key}'")
+                            # Skip if we've already processed this page
+                            if page_id in processed_page_ids:
+                                continue
+
+                            # Add to processed set to avoid duplicates
+                            processed_page_ids.add(page_id)
+
+                            # Check if page is in state file
+                            if page_id not in current_state:
+                                logger.info(f"Found page '{page['title']}' (ID: {page_id}) missing from state file")
+                                new_pages_count += 1
+
+                                # Process the page
+                                processed, page_stats = process_page(page, state_manager, html_generator,
+                                                                    html_to_pdf_converter, args.html)
+                                # Update global stats
+                                for key, value in page_stats.items():
+                                    stats[key] += value
+                                if processed:
+                                    stats["processed"] += 1
+                                else:
+                                    stats["skipped"] += 1
+
+                    logger.info(f"Processed {new_pages_count} new pages in space '{space_key}'")
 
                     # Add a small delay to avoid rate limiting
                     time.sleep(0.5)

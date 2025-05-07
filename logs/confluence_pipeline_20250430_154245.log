@@ -1,0 +1,264 @@
+2025-04-30 15:42:45,143 - root - INFO - Logging initialized. Log file: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\logs\confluence_pipeline_20250430_154245.log
+2025-04-30 15:42:45,145 - utils.state_manager - WARNING - Invalid JSON in state file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\state.json. Creating new state.
+2025-04-30 15:42:45,146 - output_generator.html_to_pdf_converter - INFO - Using wkhtmltopdf at: C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe
+2025-04-30 15:42:45,312 - root - INFO - Fetching all pages in space 'AgenticAI'
+2025-04-30 15:42:45,313 - api_client.confluence_client - INFO - Fetching pages in space 'AgenticAI'
+2025-04-30 15:42:47,014 - api_client.confluence_client - INFO - Fetching page with ID: 473268937
+2025-04-30 15:42:47,815 - api_client.confluence_client - INFO - Fetching page with ID: 473268952
+2025-04-30 15:42:49,063 - api_client.confluence_client - INFO - Fetching page with ID: 473628714
+2025-04-30 15:42:49,861 - api_client.confluence_client - INFO - Fetching page with ID: 473595989
+2025-04-30 15:42:50,623 - api_client.confluence_client - INFO - Fetching page with ID: 473596002
+2025-04-30 15:42:51,373 - api_client.confluence_client - INFO - Fetching page with ID: 473596020
+2025-04-30 15:42:52,166 - api_client.confluence_client - INFO - Fetching page with ID: 473694220
+2025-04-30 15:42:52,922 - api_client.confluence_client - INFO - Fetching page with ID: 474054705
+2025-04-30 15:42:53,681 - api_client.confluence_client - INFO - Fetching page with ID: 474054761
+2025-04-30 15:42:54,937 - api_client.confluence_client - INFO - Fetching page with ID: 473595975
+2025-04-30 15:42:55,693 - api_client.confluence_client - INFO - Fetching page with ID: 473628775
+2025-04-30 15:42:56,462 - api_client.confluence_client - INFO - Fetching page with ID: 474021958
+2025-04-30 15:42:57,207 - api_client.confluence_client - INFO - Fetching page with ID: 473628787
+2025-04-30 15:42:57,990 - api_client.confluence_client - INFO - Fetching page with ID: 473596031
+2025-04-30 15:42:58,769 - api_client.confluence_client - INFO - Fetching page with ID: 477659502
+2025-04-30 15:42:59,525 - api_client.confluence_client - INFO - Fetching page with ID: 477888517
+2025-04-30 15:43:00,296 - api_client.confluence_client - INFO - Fetching page with ID: 477626611
+2025-04-30 15:43:01,099 - api_client.confluence_client - INFO - Fetching page with ID: 477659535
+2025-04-30 15:43:01,839 - api_client.confluence_client - INFO - Fetching page with ID: 478314851
+2025-04-30 15:43:02,591 - api_client.confluence_client - INFO - Fetching page with ID: 473269082
+2025-04-30 15:43:03,353 - api_client.confluence_client - INFO - Fetching page with ID: 473530691
+2025-04-30 15:43:04,122 - api_client.confluence_client - INFO - Fetching page with ID: 474054739
+2025-04-30 15:43:04,900 - api_client.confluence_client - INFO - Fetching page with ID: 474185759
+2025-04-30 15:43:05,651 - api_client.confluence_client - INFO - Found 47 pages in space 'AgenticAI'
+2025-04-30 15:43:05,651 - root - INFO - Found 47 pages in space 'AgenticAI'
+2025-04-30 15:43:05,652 - root - INFO - Processing page 'AgenticAI' (ID: 473268916)
+2025-04-30 15:43:05,653 - output_generator.html_generator - INFO - Generating HTML for page 'AgenticAI' (ID: 473268916)
+2025-04-30 15:43:05,657 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\AgenticAI_473268916.html
+2025-04-30 15:43:05,658 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\AgenticAI_473268916.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\AgenticAI_473268916.pdf
+2025-04-30 15:43:05,659 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\AgenticAI_473268916.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\AgenticAI_473268916.pdf
+2025-04-30 15:43:08,532 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\AgenticAI_473268916.pdf
+2025-04-30 15:43:08,533 - root - INFO - Successfully converted HTML to PDF for page 'AgenticAI' (ID: 473268916)
+2025-04-30 15:43:08,534 - utils.state_manager - INFO - Saved state for 1 pages
+2025-04-30 15:43:08,534 - root - INFO - Processing page 'Template - How-to guide' (ID: 473268937)
+2025-04-30 15:43:08,535 - output_generator.html_generator - INFO - Generating HTML for page 'Template - How-to guide' (ID: 473268937)
+2025-04-30 15:43:08,539 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Template - How-to guide_473268937.html
+2025-04-30 15:43:08,540 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Template - How-to guide_473268937.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Template - How-to guide_473268937.pdf
+2025-04-30 15:43:08,541 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Template - How-to guide_473268937.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Template - How-to guide_473268937.pdf
+2025-04-30 15:43:11,029 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Template - How-to guide_473268937.pdf
+2025-04-30 15:43:11,029 - root - INFO - Successfully converted HTML to PDF for page 'Template - How-to guide' (ID: 473268937)
+2025-04-30 15:43:11,030 - utils.state_manager - INFO - Saved state for 2 pages
+2025-04-30 15:43:11,031 - root - INFO - Processing page 'Template - Troubleshooting article' (ID: 473268952)
+2025-04-30 15:43:11,032 - output_generator.html_generator - INFO - Generating HTML for page 'Template - Troubleshooting article' (ID: 473268952)
+2025-04-30 15:43:11,035 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Template - Troubleshooting article_473268952.html
+2025-04-30 15:43:11,036 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Template - Troubleshooting article_473268952.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Template - Troubleshooting article_473268952.pdf
+2025-04-30 15:43:11,036 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Template - Troubleshooting article_473268952.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Template - Troubleshooting article_473268952.pdf
+2025-04-30 15:43:13,942 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Template - Troubleshooting article_473268952.pdf
+2025-04-30 15:43:13,943 - root - INFO - Successfully converted HTML to PDF for page 'Template - Troubleshooting article' (ID: 473268952)
+2025-04-30 15:43:13,943 - utils.state_manager - INFO - Saved state for 3 pages
+2025-04-30 15:43:13,944 - root - INFO - Processing page 'Documentation & Support Agent' (ID: 473269082)
+2025-04-30 15:43:13,944 - output_generator.html_generator - INFO - Generating HTML for page 'Documentation & Support Agent' (ID: 473269082)
+2025-04-30 15:43:13,957 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Documentation & Support Agent_473269082.html
+2025-04-30 15:43:13,958 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Documentation & Support Agent_473269082.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Documentation & Support Agent_473269082.pdf
+2025-04-30 15:43:13,959 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Documentation & Support Agent_473269082.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Documentation & Support Agent_473269082.pdf
+2025-04-30 15:43:16,657 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Documentation & Support Agent_473269082.pdf
+2025-04-30 15:43:16,657 - root - INFO - Successfully converted HTML to PDF for page 'Documentation & Support Agent' (ID: 473269082)
+2025-04-30 15:43:16,658 - utils.state_manager - INFO - Saved state for 4 pages
+2025-04-30 15:43:16,659 - root - INFO - Processing page 'API Listing and Details' (ID: 473530691)
+2025-04-30 15:43:16,660 - output_generator.html_generator - INFO - Generating HTML for page 'API Listing and Details' (ID: 473530691)
+2025-04-30 15:43:18,476 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\API Listing and Details_473530691.html
+2025-04-30 15:43:18,483 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\API Listing and Details_473530691.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\API Listing and Details_473530691.pdf
+2025-04-30 15:43:18,487 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\API Listing and Details_473530691.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\API Listing and Details_473530691.pdf
+2025-04-30 15:43:21,458 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\API Listing and Details_473530691.pdf
+2025-04-30 15:43:21,458 - root - INFO - Successfully converted HTML to PDF for page 'API Listing and Details' (ID: 473530691)
+2025-04-30 15:43:21,459 - utils.state_manager - INFO - Saved state for 5 pages
+2025-04-30 15:43:21,460 - root - INFO - Processing page 'Tasks for Doc or Support Agent' (ID: 473595975)
+2025-04-30 15:43:21,460 - output_generator.html_generator - INFO - Generating HTML for page 'Tasks for Doc or Support Agent' (ID: 473595975)
+2025-04-30 15:43:21,476 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Tasks for Doc or Support Agent_473595975.html
+2025-04-30 15:43:21,477 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Tasks for Doc or Support Agent_473595975.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Tasks for Doc or Support Agent_473595975.pdf
+2025-04-30 15:43:21,477 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Tasks for Doc or Support Agent_473595975.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Tasks for Doc or Support Agent_473595975.pdf
+2025-04-30 15:43:24,181 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Tasks for Doc or Support Agent_473595975.pdf
+2025-04-30 15:43:24,181 - root - INFO - Successfully converted HTML to PDF for page 'Tasks for Doc or Support Agent' (ID: 473595975)
+2025-04-30 15:43:24,183 - utils.state_manager - INFO - Saved state for 6 pages
+2025-04-30 15:43:24,183 - root - INFO - Processing page '[Draft] Agentic Solution - Architecture' (ID: 473595989)
+2025-04-30 15:43:24,184 - output_generator.html_generator - INFO - Generating HTML for page '[Draft] Agentic Solution - Architecture' (ID: 473595989)
+2025-04-30 15:43:26,410 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\[Draft] Agentic Solution - Architecture_473595989.html
+2025-04-30 15:43:26,416 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\[Draft] Agentic Solution - Architecture_473595989.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\[Draft] Agentic Solution - Architecture_473595989.pdf
+2025-04-30 15:43:26,418 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\[Draft] Agentic Solution - Architecture_473595989.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\[Draft] Agentic Solution - Architecture_473595989.pdf
+2025-04-30 15:43:29,608 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\[Draft] Agentic Solution - Architecture_473595989.pdf
+2025-04-30 15:43:29,609 - root - INFO - Successfully converted HTML to PDF for page '[Draft] Agentic Solution - Architecture' (ID: 473595989)
+2025-04-30 15:43:29,610 - utils.state_manager - INFO - Saved state for 7 pages
+2025-04-30 15:43:29,610 - root - INFO - Processing page 'Upgrade Documentation' (ID: 473596002)
+2025-04-30 15:43:29,611 - output_generator.html_generator - INFO - Generating HTML for page 'Upgrade Documentation' (ID: 473596002)
+2025-04-30 15:43:29,612 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Upgrade Documentation_473596002.html
+2025-04-30 15:43:29,612 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Upgrade Documentation_473596002.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Upgrade Documentation_473596002.pdf
+2025-04-30 15:43:29,613 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Upgrade Documentation_473596002.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Upgrade Documentation_473596002.pdf
+2025-04-30 15:43:32,278 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Upgrade Documentation_473596002.pdf
+2025-04-30 15:43:32,279 - root - INFO - Successfully converted HTML to PDF for page 'Upgrade Documentation' (ID: 473596002)
+2025-04-30 15:43:32,280 - utils.state_manager - INFO - Saved state for 8 pages
+2025-04-30 15:43:32,281 - root - INFO - Processing page 'Code Conversion' (ID: 473596020)
+2025-04-30 15:43:32,281 - output_generator.html_generator - INFO - Generating HTML for page 'Code Conversion' (ID: 473596020)
+2025-04-30 15:43:32,283 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Code Conversion_473596020.html
+2025-04-30 15:43:32,283 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Code Conversion_473596020.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Code Conversion_473596020.pdf
+2025-04-30 15:43:32,283 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Code Conversion_473596020.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Code Conversion_473596020.pdf
+2025-04-30 15:43:35,005 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Code Conversion_473596020.pdf
+2025-04-30 15:43:35,006 - root - INFO - Successfully converted HTML to PDF for page 'Code Conversion' (ID: 473596020)
+2025-04-30 15:43:35,008 - utils.state_manager - INFO - Saved state for 9 pages
+2025-04-30 15:43:35,008 - root - INFO - Processing page 'Editor usecase for Developer community- JS' (ID: 473596031)
+2025-04-30 15:43:35,010 - output_generator.html_generator - INFO - Generating HTML for page 'Editor usecase for Developer community- JS' (ID: 473596031)
+2025-04-30 15:43:35,017 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Editor usecase for Developer community- JS_473596031.html
+2025-04-30 15:43:35,018 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Editor usecase for Developer community- JS_473596031.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Editor usecase for Developer community- JS_473596031.pdf
+2025-04-30 15:43:35,019 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Editor usecase for Developer community- JS_473596031.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Editor usecase for Developer community- JS_473596031.pdf
+2025-04-30 15:43:37,535 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Editor usecase for Developer community- JS_473596031.pdf
+2025-04-30 15:43:37,535 - root - INFO - Successfully converted HTML to PDF for page 'Editor usecase for Developer community- JS' (ID: 473596031)
+2025-04-30 15:43:37,536 - utils.state_manager - INFO - Saved state for 10 pages
+2025-04-30 15:43:37,537 - root - INFO - Processing page 'Agentic Solution – Phase-wise Delivery Plan' (ID: 473628714)
+2025-04-30 15:43:37,537 - output_generator.html_generator - INFO - Generating HTML for page 'Agentic Solution – Phase-wise Delivery Plan' (ID: 473628714)
+2025-04-30 15:43:37,546 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Agentic Solution – Phase-wise Delivery Plan_473628714.html
+2025-04-30 15:43:37,547 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Agentic Solution – Phase-wise Delivery Plan_473628714.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Agentic Solution – Phase-wise Delivery Plan_473628714.pdf
+2025-04-30 15:43:37,547 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Agentic Solution – Phase-wise Delivery Plan_473628714.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Agentic Solution – Phase-wise Delivery Plan_473628714.pdf
+2025-04-30 15:43:40,209 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Agentic Solution – Phase-wise Delivery Plan_473628714.pdf
+2025-04-30 15:43:40,210 - root - INFO - Successfully converted HTML to PDF for page 'Agentic Solution – Phase-wise Delivery Plan' (ID: 473628714)
+2025-04-30 15:43:40,211 - utils.state_manager - INFO - Saved state for 11 pages
+2025-04-30 15:43:40,212 - root - INFO - Processing page 'Doc Agent - Code Flow - Current - as of 25-Apr-2025' (ID: 473628775)
+2025-04-30 15:43:40,212 - output_generator.html_generator - INFO - Generating HTML for page 'Doc Agent - Code Flow - Current - as of 25-Apr-2025' (ID: 473628775)
+2025-04-30 15:43:41,069 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Doc Agent - Code Flow - Current - as of 25-Apr-2025_473628775.html
+2025-04-30 15:43:41,071 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Doc Agent - Code Flow - Current - as of 25-Apr-2025_473628775.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Doc Agent - Code Flow - Current - as of 25-Apr-2025_473628775.pdf
+2025-04-30 15:43:41,071 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Doc Agent - Code Flow - Current - as of 25-Apr-2025_473628775.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Doc Agent - Code Flow - Current - as of 25-Apr-2025_473628775.pdf
+2025-04-30 15:43:44,457 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Doc Agent - Code Flow - Current - as of 25-Apr-2025_473628775.pdf
+2025-04-30 15:43:44,457 - root - INFO - Successfully converted HTML to PDF for page 'Doc Agent - Code Flow - Current - as of 25-Apr-2025' (ID: 473628775)
+2025-04-30 15:43:44,458 - utils.state_manager - INFO - Saved state for 12 pages
+2025-04-30 15:43:44,459 - root - INFO - Processing page 'Upgrade Concerns' (ID: 473628787)
+2025-04-30 15:43:44,459 - output_generator.html_generator - INFO - Generating HTML for page 'Upgrade Concerns' (ID: 473628787)
+2025-04-30 15:43:44,471 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Upgrade Concerns_473628787.html
+2025-04-30 15:43:44,472 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Upgrade Concerns_473628787.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Upgrade Concerns_473628787.pdf
+2025-04-30 15:43:44,472 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Upgrade Concerns_473628787.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Upgrade Concerns_473628787.pdf
+2025-04-30 15:43:47,106 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Upgrade Concerns_473628787.pdf
+2025-04-30 15:43:47,107 - root - INFO - Successfully converted HTML to PDF for page 'Upgrade Concerns' (ID: 473628787)
+2025-04-30 15:43:47,108 - utils.state_manager - INFO - Saved state for 13 pages
+2025-04-30 15:43:47,109 - root - INFO - Processing page 'QA Agent' (ID: 473694220)
+2025-04-30 15:43:47,109 - output_generator.html_generator - INFO - Generating HTML for page 'QA Agent' (ID: 473694220)
+2025-04-30 15:43:47,111 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\QA Agent_473694220.html
+2025-04-30 15:43:47,112 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\QA Agent_473694220.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\QA Agent_473694220.pdf
+2025-04-30 15:43:47,112 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\QA Agent_473694220.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\QA Agent_473694220.pdf
+2025-04-30 15:43:49,757 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\QA Agent_473694220.pdf
+2025-04-30 15:43:49,758 - root - INFO - Successfully converted HTML to PDF for page 'QA Agent' (ID: 473694220)
+2025-04-30 15:43:49,759 - utils.state_manager - INFO - Saved state for 14 pages
+2025-04-30 15:43:49,760 - root - INFO - Processing page 'High-Level Design (HLD) for Doc and Support Agent V1' (ID: 474021958)
+2025-04-30 15:43:49,760 - output_generator.html_generator - INFO - Generating HTML for page 'High-Level Design (HLD) for Doc and Support Agent V1' (ID: 474021958)
+2025-04-30 15:43:50,845 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\High-Level Design (HLD) for Doc and Support Agent V1_474021958.html
+2025-04-30 15:43:50,851 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\High-Level Design (HLD) for Doc and Support Agent V1_474021958.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\High-Level Design (HLD) for Doc and Support Agent V1_474021958.pdf
+2025-04-30 15:43:50,853 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\High-Level Design (HLD) for Doc and Support Agent V1_474021958.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\High-Level Design (HLD) for Doc and Support Agent V1_474021958.pdf
+2025-04-30 15:43:55,460 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\High-Level Design (HLD) for Doc and Support Agent V1_474021958.pdf
+2025-04-30 15:43:55,460 - root - INFO - Successfully converted HTML to PDF for page 'High-Level Design (HLD) for Doc and Support Agent V1' (ID: 474021958)
+2025-04-30 15:43:55,462 - utils.state_manager - INFO - Saved state for 15 pages
+2025-04-30 15:43:55,462 - root - INFO - Processing page 'Agentic AI Project Information' (ID: 474054705)
+2025-04-30 15:43:55,463 - output_generator.html_generator - INFO - Generating HTML for page 'Agentic AI Project Information' (ID: 474054705)
+2025-04-30 15:43:55,470 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Agentic AI Project Information_474054705.html
+2025-04-30 15:43:55,471 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Agentic AI Project Information_474054705.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Agentic AI Project Information_474054705.pdf
+2025-04-30 15:43:55,471 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Agentic AI Project Information_474054705.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Agentic AI Project Information_474054705.pdf
+2025-04-30 15:43:58,122 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Agentic AI Project Information_474054705.pdf
+2025-04-30 15:43:58,122 - root - INFO - Successfully converted HTML to PDF for page 'Agentic AI Project Information' (ID: 474054705)
+2025-04-30 15:43:58,124 - utils.state_manager - INFO - Saved state for 16 pages
+2025-04-30 15:43:58,125 - root - INFO - Processing page 'IUP Route for Metadata Changes - Overall Design' (ID: 474054739)
+2025-04-30 15:43:58,126 - output_generator.html_generator - INFO - Generating HTML for page 'IUP Route for Metadata Changes - Overall Design' (ID: 474054739)
+2025-04-30 15:43:58,811 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\IUP Route for Metadata Changes - Overall Design_474054739.html
+2025-04-30 15:43:58,814 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\IUP Route for Metadata Changes - Overall Design_474054739.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\IUP Route for Metadata Changes - Overall Design_474054739.pdf
+2025-04-30 15:43:58,817 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\IUP Route for Metadata Changes - Overall Design_474054739.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\IUP Route for Metadata Changes - Overall Design_474054739.pdf
+2025-04-30 15:44:01,747 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\IUP Route for Metadata Changes - Overall Design_474054739.pdf
+2025-04-30 15:44:01,747 - root - INFO - Successfully converted HTML to PDF for page 'IUP Route for Metadata Changes - Overall Design' (ID: 474054739)
+2025-04-30 15:44:01,749 - utils.state_manager - INFO - Saved state for 17 pages
+2025-04-30 15:44:01,749 - root - INFO - Processing page 'Agentic AI Solution – Repository Structure, Branching, Deployment, and Versioning Strategy' (ID: 474054761)
+2025-04-30 15:44:01,750 - output_generator.html_generator - INFO - Generating HTML for page 'Agentic AI Solution – Repository Structure, Branching, Deployment, and Versioning Strategy' (ID: 474054761)
+2025-04-30 15:44:01,761 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Agentic AI Solution – Repository Structure, Branching, Deployment, and Versioning Strategy_474054761.html
+2025-04-30 15:44:01,762 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Agentic AI Solution – Repository Structure, Branching, Deployment, and Versioning Strategy_474054761.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Agentic AI Solution – Repository Structure, Branching, Deployment, and Versioning Strategy_474054761.pdf
+2025-04-30 15:44:01,763 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Agentic AI Solution – Repository Structure, Branching, Deployment, and Versioning Strategy_474054761.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Agentic AI Solution – Repository Structure, Branching, Deployment, and Versioning Strategy_474054761.pdf
+2025-04-30 15:44:04,285 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Agentic AI Solution – Repository Structure, Branching, Deployment, and Versioning Strategy_474054761.pdf
+2025-04-30 15:44:04,285 - root - INFO - Successfully converted HTML to PDF for page 'Agentic AI Solution – Repository Structure, Branching, Deployment, and Versioning Strategy' (ID: 474054761)
+2025-04-30 15:44:04,287 - utils.state_manager - INFO - Saved state for 18 pages
+2025-04-30 15:44:04,287 - root - INFO - Processing page 'QA Multi-Agent Architecture' (ID: 474185759)
+2025-04-30 15:44:04,288 - output_generator.html_generator - INFO - Generating HTML for page 'QA Multi-Agent Architecture' (ID: 474185759)
+2025-04-30 15:44:04,970 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\QA Multi-Agent Architecture_474185759.html
+2025-04-30 15:44:04,972 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\QA Multi-Agent Architecture_474185759.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\QA Multi-Agent Architecture_474185759.pdf
+2025-04-30 15:44:04,974 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\QA Multi-Agent Architecture_474185759.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\QA Multi-Agent Architecture_474185759.pdf
+2025-04-30 15:44:08,064 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\QA Multi-Agent Architecture_474185759.pdf
+2025-04-30 15:44:08,065 - root - INFO - Successfully converted HTML to PDF for page 'QA Multi-Agent Architecture' (ID: 474185759)
+2025-04-30 15:44:08,067 - utils.state_manager - INFO - Saved state for 19 pages
+2025-04-30 15:44:08,068 - root - INFO - Processing page 'Requirement Doc - Backbone to React (ES6 Compatible) using Report API' (ID: 477626611)
+2025-04-30 15:44:08,068 - output_generator.html_generator - INFO - Generating HTML for page 'Requirement Doc - Backbone to React (ES6 Compatible) using Report API' (ID: 477626611)
+2025-04-30 15:44:08,071 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Requirement Doc - Backbone to React (ES6 Compatible) using Report API_477626611.html
+2025-04-30 15:44:08,071 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Requirement Doc - Backbone to React (ES6 Compatible) using Report API_477626611.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Requirement Doc - Backbone to React (ES6 Compatible) using Report API_477626611.pdf
+2025-04-30 15:44:08,072 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Requirement Doc - Backbone to React (ES6 Compatible) using Report API_477626611.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Requirement Doc - Backbone to React (ES6 Compatible) using Report API_477626611.pdf
+2025-04-30 15:44:10,802 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Requirement Doc - Backbone to React (ES6 Compatible) using Report API_477626611.pdf
+2025-04-30 15:44:10,803 - root - INFO - Successfully converted HTML to PDF for page 'Requirement Doc - Backbone to React (ES6 Compatible) using Report API' (ID: 477626611)
+2025-04-30 15:44:10,804 - utils.state_manager - INFO - Saved state for 20 pages
+2025-04-30 15:44:10,804 - root - INFO - Processing page 'Requirement Doc - JS to BR' (ID: 477659502)
+2025-04-30 15:44:10,805 - output_generator.html_generator - INFO - Generating HTML for page 'Requirement Doc - JS to BR' (ID: 477659502)
+2025-04-30 15:44:10,808 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Requirement Doc - JS to BR_477659502.html
+2025-04-30 15:44:10,808 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Requirement Doc - JS to BR_477659502.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Requirement Doc - JS to BR_477659502.pdf
+2025-04-30 15:44:10,809 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Requirement Doc - JS to BR_477659502.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Requirement Doc - JS to BR_477659502.pdf
+2025-04-30 15:44:13,391 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Requirement Doc - JS to BR_477659502.pdf
+2025-04-30 15:44:13,391 - root - INFO - Successfully converted HTML to PDF for page 'Requirement Doc - JS to BR' (ID: 477659502)
+2025-04-30 15:44:13,393 - utils.state_manager - INFO - Saved state for 21 pages
+2025-04-30 15:44:13,394 - root - INFO - Processing page 'Requirement Doc - PLSQL to Emery' (ID: 477659535)
+2025-04-30 15:44:13,394 - output_generator.html_generator - INFO - Generating HTML for page 'Requirement Doc - PLSQL to Emery' (ID: 477659535)
+2025-04-30 15:44:13,397 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Requirement Doc - PLSQL to Emery_477659535.html
+2025-04-30 15:44:13,398 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Requirement Doc - PLSQL to Emery_477659535.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Requirement Doc - PLSQL to Emery_477659535.pdf
+2025-04-30 15:44:13,398 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Requirement Doc - PLSQL to Emery_477659535.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Requirement Doc - PLSQL to Emery_477659535.pdf
+2025-04-30 15:44:15,933 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Requirement Doc - PLSQL to Emery_477659535.pdf
+2025-04-30 15:44:15,933 - root - INFO - Successfully converted HTML to PDF for page 'Requirement Doc - PLSQL to Emery' (ID: 477659535)
+2025-04-30 15:44:15,935 - utils.state_manager - INFO - Saved state for 22 pages
+2025-04-30 15:44:15,935 - root - INFO - Processing page 'Requirement Doc - Backbone to React (ES6 Compatible) using mPower API' (ID: 477888517)
+2025-04-30 15:44:15,936 - output_generator.html_generator - INFO - Generating HTML for page 'Requirement Doc - Backbone to React (ES6 Compatible) using mPower API' (ID: 477888517)
+2025-04-30 15:44:15,939 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Requirement Doc - Backbone to React (ES6 Compatible) using mPower API_477888517.html
+2025-04-30 15:44:15,940 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Requirement Doc - Backbone to React (ES6 Compatible) using mPower API_477888517.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Requirement Doc - Backbone to React (ES6 Compatible) using mPower API_477888517.pdf
+2025-04-30 15:44:15,940 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Requirement Doc - Backbone to React (ES6 Compatible) using mPower API_477888517.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Requirement Doc - Backbone to React (ES6 Compatible) using mPower API_477888517.pdf
+2025-04-30 15:44:18,533 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Requirement Doc - Backbone to React (ES6 Compatible) using mPower API_477888517.pdf
+2025-04-30 15:44:18,533 - root - INFO - Successfully converted HTML to PDF for page 'Requirement Doc - Backbone to React (ES6 Compatible) using mPower API' (ID: 477888517)
+2025-04-30 15:44:18,536 - utils.state_manager - INFO - Saved state for 23 pages
+2025-04-30 15:44:18,537 - root - INFO - Processing page 'Upgrade AI - JS to BR (Requirement Document)' (ID: 478314851)
+2025-04-30 15:44:18,537 - output_generator.html_generator - INFO - Generating HTML for page 'Upgrade AI - JS to BR (Requirement Document)' (ID: 478314851)
+2025-04-30 15:44:19,409 - output_generator.html_generator - INFO - HTML saved to C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Upgrade AI - JS to BR (Requirement Document)_478314851.html
+2025-04-30 15:44:19,412 - root - INFO - Converting HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Upgrade AI - JS to BR (Requirement Document)_478314851.html -> C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Upgrade AI - JS to BR (Requirement Document)_478314851.pdf
+2025-04-30 15:44:19,413 - output_generator.html_to_pdf_converter - INFO - Converting HTML file C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\html\AgenticAI\Upgrade AI - JS to BR (Requirement Document)_478314851.html to PDF C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Upgrade AI - JS to BR (Requirement Document)_478314851.pdf
+2025-04-30 15:44:23,393 - output_generator.html_to_pdf_converter - INFO - Successfully converted HTML to PDF: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\output\pdf\AgenticAI\Upgrade AI - JS to BR (Requirement Document)_478314851.pdf
+2025-04-30 15:44:23,393 - root - INFO - Successfully converted HTML to PDF for page 'Upgrade AI - JS to BR (Requirement Document)' (ID: 478314851)
+2025-04-30 15:44:23,396 - utils.state_manager - INFO - Saved state for 24 pages
+2025-04-30 15:44:23,397 - utils.state_manager - INFO - Skipping page 'Template - How-to guide' (ID: 473268937) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,397 - utils.state_manager - INFO - Skipping page 'Template - Troubleshooting article' (ID: 473268952) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,397 - utils.state_manager - INFO - Skipping page 'Agentic Solution – Phase-wise Delivery Plan' (ID: 473628714) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,398 - utils.state_manager - INFO - Skipping page '[Draft] Agentic Solution - Architecture' (ID: 473595989) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,398 - utils.state_manager - INFO - Skipping page 'Upgrade Documentation' (ID: 473596002) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,398 - utils.state_manager - INFO - Skipping page 'Code Conversion' (ID: 473596020) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,399 - utils.state_manager - INFO - Skipping page 'QA Agent' (ID: 473694220) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,399 - utils.state_manager - INFO - Skipping page 'Agentic AI Project Information' (ID: 474054705) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,399 - utils.state_manager - INFO - Skipping page 'Agentic AI Solution – Repository Structure, Branching, Deployment, and Versioning Strategy' (ID: 474054761) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,399 - utils.state_manager - INFO - Skipping page 'Tasks for Doc or Support Agent' (ID: 473595975) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,400 - utils.state_manager - INFO - Skipping page 'Doc Agent - Code Flow - Current - as of 25-Apr-2025' (ID: 473628775) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,400 - utils.state_manager - INFO - Skipping page 'High-Level Design (HLD) for Doc and Support Agent V1' (ID: 474021958) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,400 - utils.state_manager - INFO - Skipping page 'Upgrade Concerns' (ID: 473628787) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,401 - utils.state_manager - INFO - Skipping page 'Editor usecase for Developer community- JS' (ID: 473596031) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,401 - utils.state_manager - INFO - Skipping page 'Requirement Doc - JS to BR' (ID: 477659502) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,401 - utils.state_manager - INFO - Skipping page 'Requirement Doc - Backbone to React (ES6 Compatible) using mPower API' (ID: 477888517) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,402 - utils.state_manager - INFO - Skipping page 'Requirement Doc - Backbone to React (ES6 Compatible) using Report API' (ID: 477626611) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,402 - utils.state_manager - INFO - Skipping page 'Requirement Doc - PLSQL to Emery' (ID: 477659535) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,402 - utils.state_manager - INFO - Skipping page 'Upgrade AI - JS to BR (Requirement Document)' (ID: 478314851) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,403 - utils.state_manager - INFO - Skipping page 'Documentation & Support Agent' (ID: 473269082) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,403 - utils.state_manager - INFO - Skipping page 'API Listing and Details' (ID: 473530691) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,403 - utils.state_manager - INFO - Skipping page 'IUP Route for Metadata Changes - Overall Design' (ID: 474054739) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,403 - utils.state_manager - INFO - Skipping page 'QA Multi-Agent Architecture' (ID: 474185759) in space 'AgenticAI' - no changes since last processing
+2025-04-30 15:44:23,403 - root - INFO - ==================================================
+2025-04-30 15:44:23,405 - root - INFO - API Response Summary:
+2025-04-30 15:44:23,405 - root - INFO -   Total Pages from API: 47
+2025-04-30 15:44:23,405 - root - INFO - --------------------------------------------------
+2025-04-30 15:44:23,405 - root - INFO - Content Fetching Summary:
+2025-04-30 15:44:23,406 - root - INFO -   Processed: 24
+2025-04-30 15:44:23,407 - root - INFO -   Skipped: 23
+2025-04-30 15:44:23,407 - root - INFO -   Failed: 0
+2025-04-30 15:44:23,407 - root - INFO - --------------------------------------------------
+2025-04-30 15:44:23,407 - root - INFO - HTML Processing:
+2025-04-30 15:44:23,408 - root - INFO -   Processed HTML: 24
+2025-04-30 15:44:23,408 - root - INFO -   Skipped HTML: 23
+2025-04-30 15:44:23,409 - root - INFO -   Failed HTML: 0
+2025-04-30 15:44:23,409 - root - INFO - --------------------------------------------------
+2025-04-30 15:44:23,410 - root - INFO - PDF Processing:
+2025-04-30 15:44:23,410 - root - INFO -   Processed PDF: 24
+2025-04-30 15:44:23,410 - root - INFO -   Skipped PDF: 23
+2025-04-30 15:44:23,411 - root - INFO -   Failed PDF: 0
+2025-04-30 15:44:23,411 - root - INFO - ==================================================

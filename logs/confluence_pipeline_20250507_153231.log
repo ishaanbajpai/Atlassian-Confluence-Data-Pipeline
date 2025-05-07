@@ -1,0 +1,57 @@
+2025-05-07 15:32:31,432 - root - INFO - Logging initialized. Log file: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\logs\confluence_pipeline_20250507_153231.log
+2025-05-07 15:32:31,432 - api_client.confluence_client - DEBUG - Using base URL: https://metricstream.atlassian.net/wiki
+2025-05-07 15:32:31,432 - api_client.confluence_client - DEBUG - Using API URL: https://metricstream.atlassian.net/wiki/rest/api
+2025-05-07 15:32:31,453 - utils.state_manager - INFO - Loaded state for 27 pages
+2025-05-07 15:32:31,453 - api_client.confluence_client - DEBUG - Using base URL: https://metricstream.atlassian.net/wiki
+2025-05-07 15:32:31,453 - api_client.confluence_client - DEBUG - Using API URL: https://metricstream.atlassian.net/wiki/rest/api
+2025-05-07 15:32:31,453 - output_generator.html_to_pdf_converter - INFO - Using wkhtmltopdf at: C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe
+2025-05-07 15:32:31,582 - root - INFO - Fetching all pages in space 'AgenticAI'
+2025-05-07 15:32:31,582 - api_client.confluence_client - INFO - Fetching pages in space 'AgenticAI'
+2025-05-07 15:32:31,582 - api_client.confluence_client - DEBUG - Making GET request to https://metricstream.atlassian.net/wiki/rest/api/content with params: {'spaceKey': 'AgenticAI', 'type': 'page', 'status': 'current', 'start': 0, 'limit': 100, 'expand': 'body.storage,version,space,ancestors,children.page'}
+2025-05-07 15:32:31,587 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): metricstream.atlassian.net:443
+2025-05-07 15:32:31,819 - urllib3.connectionpool - DEBUG - https://metricstream.atlassian.net:443 "GET /wiki/rest/api/content?spaceKey=AgenticAI&type=page&status=current&start=0&limit=100&expand=body.storage%2Cversion%2Cspace%2Cancestors%2Cchildren.page HTTP/11" 405 2256
+2025-05-07 15:32:31,819 - api_client.confluence_client - DEBUG - Full URL requested: https://metricstream.atlassian.net/wiki/rest/api/content?spaceKey=AgenticAI&type=page&status=current&start=0&limit=100&expand=body.storage%2Cversion%2Cspace%2Cancestors%2Cchildren.page
+2025-05-07 15:32:31,825 - api_client.confluence_client - ERROR - API request failed with status code 405: 405 Client Error: Not Allowed for url: https://metricstream.atlassian.net/wiki/rest/api/content?spaceKey=AgenticAI&type=page&status=current&start=0&limit=100&expand=body.storage%2Cversion%2Cspace%2Cancestors%2Cchildren.page
+2025-05-07 15:32:31,825 - api_client.confluence_client - ERROR - Response body: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Human Verification</title>
+    <style>
+        body {
+            font-family: "Arial";
+        }
+    </style>
+    <script type="text/javascript">
+    window.awsWafCookieDomainList = ['atl-paas.net','atlassian.com','atlassian.net','jira-dev.com','jira.com','opsgeni.us','statuspage.io','trellis.coffee','trello.com'];
+    window.gokuProps = {
+"key":"AQIDAHjcYu/GjX+QlghicBgQ/7bFaQZ+m5FKCMDnO+vTbNg96AGAnEAWAWziar0weWZUnGqJAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMeqd9nRRkaWoElBPsAgEQgDvUp5CXxxBdXHonaLLxKUECCvFVGhkT0sMEY4s66EZ31+HMfHbkVySbABD4D3tC7NGud7ikiNCrwblGhQ==",
+          "iv":"grC8rAHdNgAAAUht",
+          "context":"eU3XNNrSI/VRmA/IKUhLM233SAqsf25So42Z9W1Pq6AYKaay1kuNAXgq5OLBHapUitnvxx4u4c+jC2U+s1bTqV9eHJMsDiPNMEI6wI594+hGnBWj4/LJu4GCXXPAnb7ZyQEYRCJT7KVpuComvjm9wU2yM+OUX0OCXqC4RdYIhxLyJw2i270BFiBJ3c1ExtAxp9zsXzw9aMk2BEi2zI+cENnT13xrkC/Cc+TDDXfnSiVCMwfqXB3Uvyyl21FCcOXTE08rilcba/Tdw1QYKFEcJo+a+84Lnn2nM1UiY6GUvuKrB7TzseCmdkrQRcoDRfT93MTmPFtCK3dowbQm25jqi5KQZI2Q4qE4f/hlVo8VDIXmvssDTYAMampPtgu7ZbASLyyvyvY7dQ=="
+};
+    </script>
+    <script src="https://99a173f17960.335a866d.ap-south-1.token.awswaf.com/99a173f17960/52be4ea59000/39cb15f4a9e2/challenge.js"></script>
+    <script src="https://99a173f17960.335a866d.ap-south-1.captcha.awswaf.com/99a173f17960/52be4ea59000/39cb15f4a9e2/captcha.js"></script>
+</head>
+<body>
+    <div id="captcha-container"></div>
+    <script type="text/javascript">
+        AwsWafIntegration.saveReferrer();
+        window.addEventListener("load", function() {
+          const container = document.querySelector("#captcha-container");
+          CaptchaScript.renderCaptcha(container, async (voucher) => {
+              await ChallengeScript.submitCaptcha(voucher);
+              window.location.reload(true);
+          }
+      );
+    });
+    </script>
+    <noscript>
+        <h1>JavaScript is disabled</h1>
+        In order to continue, you need to verify that you're not a robot by solving a CAPTCHA puzzle.
+         The CAPTCHA puzzle requires JavaScript. Enable JavaScript and then reload the page.
+    </noscript>
+</body>
+</html>
+2025-05-07 15:32:31,825 - root - ERROR - An error occurred: 405 Client Error: Not Allowed for url: https://metricstream.atlassian.net/wiki/rest/api/content?spaceKey=AgenticAI&type=page&status=current&start=0&limit=100&expand=body.storage%2Cversion%2Cspace%2Cancestors%2Cchildren.page

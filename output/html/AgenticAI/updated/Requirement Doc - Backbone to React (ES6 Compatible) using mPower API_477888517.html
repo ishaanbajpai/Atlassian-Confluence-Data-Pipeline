@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requirement Doc - Backbone to React (ES6 Compatible) using mPower API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+            overflow-x: auto;
+            display: block;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        figure {
+            text-align: center;
+            margin: 1em 0;
+        }
+        figcaption {
+            font-style: italic;
+            font-size: 0.9em;
+            margin-top: 0.5em;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            overflow-x: auto;
+            border-radius: 3px;
+            white-space: pre;
+            font-family: monospace;
+        }
+        code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .code-block {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            white-space: pre;
+            font-family: monospace;
+        }
+        /* Syntax highlighting */
+        .keyword { color: #0000ff; }
+        .string { color: #a31515; }
+        .comment { color: #008000; }
+        .function { color: #795e26; }
+        .number { color: #098658; }
+        .type { color: #267f99; }
+        .class { color: #267f99; }
+        .variable { color: #001080; }
+    </style>
+</head>
+<body>
+    <h1>Requirement Doc - Backbone to React (ES6 Compatible) using mPower API</h1>
+    <div class="content">
+        <ac:structured-macro ac:macro-id="6c86b4b7-71c6-48f9-bdda-9dbdd3a9d1eb" ac:name="info" ac:schema-version="1"><ac:rich-text-body><p><strong><u>Applicable Release:</u></strong><u> E2 only</u></p></ac:rich-text-body></ac:structured-macro><ol start="1"><li><p>Product Development Use-cases: <ac:link><ri:user ri:account-id="557058:8dfe13de-68c9-4fd0-bdf8-9ff5733368ae" ri:local-id="5bd298db-7956-44c3-8b60-d17a309ff6e6"></ri:user></ac:link> </p></li><li><p>Upgrade Use-cases: <ac:link><ri:user ri:account-id="557058:c73f162a-a0c3-4958-a66d-58efcb9ff1e2" ri:local-id="21c93016-e864-4114-a164-5241c7b79dd8"></ri:user></ac:link> &amp; <ac:link><ri:user ri:account-id="557058:24315b51-f2f1-42c8-8820-ea36226a0b59" ri:local-id="42cc6a7d-ce16-4159-86e2-3242a4d2bf2c"></ri:user></ac:link> </p></li></ol><h2>1. Objective</h2><p>Migrate all Form-level Backbone JS (stored in the Form metadata) to ES6-based React, leveraging the latest mPower APIs and Business Rules (BR) Guide to ensure full compatibility with E2.</p><h2>2. Background</h2><ul><li><p><strong>Legacy:</strong> In E1 and earlier, developers embed custom Form logic in Backbone JS, in Form metadata.</p></li><li><p><strong>Upgrade Impact:</strong> After upgrading to E2, this legacy code may fail or behave unpredictably.</p></li><li><p><strong>API Update:</strong> E2 have updated mPower APIs; these needs to be used in place of the Backbone JS code.</p></li></ul><h2>3. Scope</h2><ul><li><p><strong>In-Scope:</strong></p><ul><li><p>All Forms contain Backbone JS.</p></li><li><p>Conversion of that code to React (ES6) syntax.</p></li><li><p>Integration with the latest mPower API methods.</p></li><li><p>Commenting out legacy JS to allow safe rollback.</p></li><li><p>Use BR API in place of JS logics wherever applicable</p></li></ul></li></ul><h2>4. Conversion Scenarios</h2><table ac:local-id="0162d1ec-de64-4d06-8f99-d4150c387bae" data-layout="default" data-table-width="760"><colgroup><col style="width: 304.0px;"/><col style="width: 455.0px;"/></colgroup><tbody><tr><th data-highlight-colour="#f0f1f2"><p style="text-align: center;"><strong>Scenario</strong></p></th><th data-highlight-colour="#f0f1f2"><p style="text-align: center;"><strong>Action</strong></p></th></tr><tr><td data-highlight-colour="#ffffff"><p><strong>A. No existing mPower API calls in the existing backbone JS</strong></p></td><td data-highlight-colour="#ffffff"><ol start="1"><li><p>Rewrite Backbone JS logic as React (ES6) compatible format.</p></li><li><p>Replace JSs with appropriate BR and mPower API calls.</p></li></ol></td></tr><tr><td data-highlight-colour="#ffffff"><p><strong>B. Contains legacy mPower API calls in the existing backbone JS</strong></p></td><td data-highlight-colour="#ffffff"><ol start="1"><li><p>Refactor existing API calls to match the latest BR &amp; mPower API.</p></li><li><p>Rewrite surrounding logic in ES6, using React patterns.</p></li></ol></td></tr></tbody></table><h2>5. Current Team Process</h2><p><strong>How the Product Developers currently performs conversions</strong></p><ol start="1"><li><p><strong>Discover:</strong></p><ol start="1"><li><p>Navigate to Module → Forms → select target Form.</p></li><li><p>Extract Backbone JS from metadata or File System.</p></li></ol></li><li><p><strong>Analyze &amp; Copy:</strong></p><ol start="1"><li><p>Create a working copy of the original JS.</p></li><li><p>Annotate key logic paths and API interactions.</p></li></ol></li><li><p><strong>Convert:</strong></p><ol start="1"><li><p>Translate overall logic, control flow and data handling into React ES6 components.</p></li><li><p>Replace or update API invocations using the mPower API Guide.</p></li><li><p>Apply BRs for any inline business logic per the BR Guide.</p></li><li><p>Comment out original Backbone blocks for easy rollback.</p></li></ol></li><li><p><strong>Validate &amp; Deploy:</strong></p><ol start="1"><li><p>Lint and build (ESLint/prettier).</p></li><li><p>Functional test within the E2 environment.</p></li><li><p>Paste converted code back into Form metadata and test functionality.</p></li></ol></li></ol><p><strong>How the CSS/Upgrade/Partner Developers currently performs conversions</strong></p><ol start="1"><li><p><strong>Discover:</strong></p><ol start="1"><li><p>Navigate to Module → Forms → select target Form.</p></li><li><p>Extract Backbone JS files (&lt;FORMNAME&gt;_pre.js, FORM_NAME&gt;.js and &lt;FORM_NAME&gt;_post.js from metadata or File System.</p></li></ol></li><li><p><strong>Analyze &amp; Copy:</strong></p><ol start="1"><li><p>Create a working copy of the original JS files.</p></li><li><p>Merge all 3 JS files into a single file.</p></li><li><p>Annotate key logic paths and API interactions.</p></li></ol></li><li><p><strong>Convert, Validate &amp; Deploy:</strong></p><ol start="1"><li><p>This is similar to the Product Developer does.</p></li></ol></li></ol><h2>6. Admin‑UX Conversion Agent Expectations</h2><p><strong>6.1 Content Conversion Workflow</strong></p><ul><li><p><strong>JS Input:</strong> </p><ul><li><p>Provide a field for developers to paste existing Backbone JS or attach the file, from Form metadata or File System.</p></li><li><p>Option to provide multiple files (Pre &amp; Post along with FORM_NAME&gt;.js)</p></li></ul></li><li><p><strong>Conversion Plan Generation:</strong> Automatically outline a step‑by‑step plan that includes:</p><ol start="1"><li><p>Merge the files into a single file and analyze.</p></li><li><p>ES6 module structure (imports/exports, components, etc..).</p></li><li><p>mPower APIs for corresponding JS logic. Generate and consider the syntax grammar for mPower APIs for JS logic. Having syntax grammar would avoid syntactical validation and it would be first time right.</p></li><li><p>BRs for corresponding JS logic following BR guide.</p></li><li><p>Placeholder points for any custom UI logic or business rules, based on Developer’s additional asks for Business logic.</p></li></ol></li><li><p><strong>Feedback &amp; Customization:</strong> Allow developers to review and edit the plan or API selections; support inline comments.</p></li><li><p><strong>Additional Logic Integration:</strong> Let developers specify extra UI elements (e.g. buttons or handlers) or additional business logic so the plan and final code include these.</p></li><li><p><strong>Code Generation:</strong> On approval, produce React (ES6) code embedding latest mPower API calls BR API calls and any custom logic. This conversion should happen on the final merged file.</p></li><li><p><strong>Copy &amp; Deploy:</strong> Enable easy copying (or download the converted file) of generated code for pasting into file system and testing.</p></li></ul><p><strong>6.2 Editor Use Case</strong></p><ul><li><p><strong>FORM Discovery:</strong> UI to browse Modules → Module → Objects → Forms → select target Form.</p></li><li><p><strong>Metadata Retrieval:</strong> Read and display current Backbone FORM JS from metadata or File System.</p></li><li><p><strong>Guided Conversion:</strong> Invoke the Content Conversion Workflow with review and approval controls.</p></li></ul><p><strong>6.3 Testing &amp; Validation:</strong></p><ul><li><p>Verify syntactical correctness (lint + build).</p></li><li><p>Check feasibility of Execute functional tests on targeted Form to confirm if Form is working as per expected behaviour.</p></li></ul><h2>7. Reference</h2><ol start="1"><li><p><strong>mPower API Guide</strong> – latest method signatures and examples in <ac:link><ri:page ri:content-title="Platform mPower APIs" ri:space-key="TP" ri:version-at-save="8"></ri:page><ac:link-body>Platform mPower APIs - Technical Publications - Confluence</ac:link-body></ac:link></p></li><li><p><strong>Business Rules (BR) Guide</strong> – syntax and patterns for inline rules</p></li><li><p><ac:link><ri:page ri:content-title="Existing OOTB JS code conversion to React equivalent" ri:space-key="PLAT" ri:version-at-save="19"></ri:page><ac:link-body>Existing OOTB JS code conversion to React equivalent - M7 Platform - Confluence</ac:link-body></ac:link></p></li><li><p><ac:link><ri:page ri:content-title="JS changs" ri:space-key="RDOP" ri:version-at-save="6"></ri:page><ac:link-body>JS changs - R&amp;D Operations - Confluence</ac:link-body></ac:link></p></li><li><p><ac:link><ri:page ri:content-title="ChatGPT - Uses in Development" ri:space-key="TAPS" ri:version-at-save="17"></ri:page><ac:link-body>ChatGPT - Uses in Development - Team Apps - Confluence</ac:link-body></ac:link></p></li></ol>
+    </div>
+</body>
+</html>

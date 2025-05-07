@@ -1,0 +1,19 @@
+2025-05-04 21:26:57,204 - root - INFO - Logging initialized. Log file: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\logs\confluence_pipeline_20250504_212657.log
+2025-05-04 21:26:57,204 - api_client.confluence_client - DEBUG - Using base URL: https://metricstream.atlassian.net/wiki
+2025-05-04 21:26:57,204 - api_client.confluence_client - DEBUG - Using API URL: https://metricstream.atlassian.net/wiki/rest/api
+2025-05-04 21:26:57,204 - utils.state_manager - INFO - State file not found at C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\state.json. Creating new state.
+2025-05-04 21:26:57,204 - api_client.confluence_client - DEBUG - Using base URL: https://metricstream.atlassian.net/wiki
+2025-05-04 21:26:57,204 - api_client.confluence_client - DEBUG - Using API URL: https://metricstream.atlassian.net/wiki/rest/api
+2025-05-04 21:26:57,204 - output_generator.html_to_pdf_converter - INFO - Using wkhtmltopdf at: C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe
+2025-05-04 21:26:57,336 - root - INFO - Fetching all pages in space 'MFS'
+2025-05-04 21:26:57,336 - api_client.confluence_client - INFO - Fetching pages in space 'MFS'
+2025-05-04 21:26:57,336 - api_client.confluence_client - DEBUG - Making GET request to https://metricstream.atlassian.net/wiki/rest/api/content with params: {'spaceKey': 'MFS', 'type': 'page', 'status': 'current', 'start': 0, 'limit': 100, 'expand': 'body.storage,version,space,ancestors,children.page'}
+2025-05-04 21:26:57,336 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): metricstream.atlassian.net:443
+2025-05-04 21:26:58,242 - urllib3.connectionpool - DEBUG - https://metricstream.atlassian.net:443 "GET /wiki/rest/api/content?spaceKey=MFS&type=page&status=current&start=0&limit=100&expand=body.storage%2Cversion%2Cspace%2Cancestors%2Cchildren.page HTTP/11" 404 None
+2025-05-04 21:26:58,249 - api_client.confluence_client - DEBUG - Full URL requested: https://metricstream.atlassian.net/wiki/rest/api/content?spaceKey=MFS&type=page&status=current&start=0&limit=100&expand=body.storage%2Cversion%2Cspace%2Cancestors%2Cchildren.page
+2025-05-04 21:26:58,250 - api_client.confluence_client - ERROR - API request failed with status code 404: 404 Client Error: Not Found for url: https://metricstream.atlassian.net/wiki/rest/api/content?spaceKey=MFS&type=page&status=current&start=0&limit=100&expand=body.storage%2Cversion%2Cspace%2Cancestors%2Cchildren.page
+2025-05-04 21:26:58,250 - api_client.confluence_client - ERROR - 404 Not Found: The requested resource could not be found. URL: https://metricstream.atlassian.net/wiki/rest/api/content?spaceKey=MFS&type=page&status=current&start=0&limit=100&expand=body.storage%2Cversion%2Cspace%2Cancestors%2Cchildren.page
+2025-05-04 21:26:58,260 - api_client.confluence_client - ERROR - This could be due to an incorrect API version, endpoint, or the resource doesn't exist.
+2025-05-04 21:26:58,260 - api_client.confluence_client - ERROR - Try changing the CONFLUENCE_API_VERSION in your .env file (current: 2)
+2025-05-04 21:26:58,266 - api_client.confluence_client - ERROR - Response body: {"statusCode":404,"data":{"authorized":true,"valid":true,"errors":[],"successful":true},"message":"com.atlassian.confluence.api.service.exceptions.NotFoundException: No space with key : MFS"}
+2025-05-04 21:26:58,273 - root - ERROR - An error occurred: 404 Client Error: Not Found for url: https://metricstream.atlassian.net/wiki/rest/api/content?spaceKey=MFS&type=page&status=current&start=0&limit=100&expand=body.storage%2Cversion%2Cspace%2Cancestors%2Cchildren.page

@@ -1,0 +1,62 @@
+2025-05-04 21:45:53,554 - root - INFO - Logging initialized. Log file: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\logs\confluence_pipeline_20250504_214553.log
+2025-05-04 21:45:53,554 - api_client.confluence_client - DEBUG - Using base URL: https://metricstream.atlassian.net/wiki
+2025-05-04 21:45:53,554 - api_client.confluence_client - DEBUG - Using API URL: https://metricstream.atlassian.net/wiki/rest/api
+2025-05-04 21:45:53,557 - utils.state_manager - INFO - Loaded state for 27 pages
+2025-05-04 21:45:53,557 - api_client.confluence_client - DEBUG - Using base URL: https://metricstream.atlassian.net/wiki
+2025-05-04 21:45:53,557 - api_client.confluence_client - DEBUG - Using API URL: https://metricstream.atlassian.net/wiki/rest/api
+2025-05-04 21:45:53,557 - output_generator.html_to_pdf_converter - INFO - Using wkhtmltopdf at: C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe
+2025-05-04 21:45:53,557 - root - INFO - Fetching all pages in space 'AgenticAI'
+2025-05-04 21:45:53,557 - api_client.confluence_client - INFO - Fetching pages in space 'AgenticAI'
+2025-05-04 21:45:53,557 - api_client.confluence_client - DEBUG - Making GET request to https://metricstream.atlassian.net/wiki/rest/api/content with params: {'spaceKey': 'AgenticAI', 'type': 'page', 'status': 'current', 'start': 0, 'limit': 100, 'expand': 'body.storage,version,space,ancestors,children.page'}
+2025-05-04 21:45:53,557 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): metricstream.atlassian.net:443
+2025-05-04 21:45:54,848 - urllib3.connectionpool - DEBUG - https://metricstream.atlassian.net:443 "GET /wiki/rest/api/content?spaceKey=AgenticAI&type=page&status=current&start=0&limit=100&expand=body.storage%2Cversion%2Cspace%2Cancestors%2Cchildren.page HTTP/11" 200 None
+2025-05-04 21:45:55,080 - api_client.confluence_client - DEBUG - Full URL requested: https://metricstream.atlassian.net/wiki/rest/api/content?spaceKey=AgenticAI&type=page&status=current&start=0&limit=100&expand=body.storage%2Cversion%2Cspace%2Cancestors%2Cchildren.page
+2025-05-04 21:45:55,089 - api_client.confluence_client - INFO - Found 27 pages in space 'AgenticAI'
+2025-05-04 21:45:55,089 - root - INFO - Found 27 pages in space 'AgenticAI'
+2025-05-04 21:45:55,092 - utils.state_manager - INFO - Loaded state for 27 pages
+2025-05-04 21:45:55,092 - utils.state_manager - INFO - Skipping page 'AgenticAI' (ID: 473268916) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,092 - utils.state_manager - INFO - Skipping page 'Template - How-to guide' (ID: 473268937) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,093 - utils.state_manager - INFO - Skipping page 'Template - Troubleshooting article' (ID: 473268952) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,093 - utils.state_manager - INFO - Skipping page 'Documentation & Support Agent' (ID: 473269082) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,093 - utils.state_manager - INFO - Skipping page 'API Listing and Details' (ID: 473530691) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,095 - utils.state_manager - INFO - Skipping page 'Tasks for Doc or Support Agent' (ID: 473595975) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,095 - utils.state_manager - INFO - Skipping page 'Agentic Solution - Architecture' (ID: 473595989) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,095 - utils.state_manager - INFO - Skipping page 'Upgrade Documentation' (ID: 473596002) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,095 - utils.state_manager - INFO - Skipping page 'Code Conversion' (ID: 473596020) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,095 - utils.state_manager - INFO - Skipping page 'Editor usecase for Developer community- JS' (ID: 473596031) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,095 - utils.state_manager - INFO - Skipping page 'Agentic Solution – Phase-wise Delivery Plan' (ID: 473628714) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,098 - utils.state_manager - INFO - Skipping page 'Doc Agent - Code Flow - Current - as of 25-Apr-2025' (ID: 473628775) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,098 - utils.state_manager - INFO - Skipping page 'Upgrade Concerns' (ID: 473628787) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,098 - utils.state_manager - INFO - Skipping page 'QA Agent' (ID: 473694220) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,098 - utils.state_manager - INFO - Skipping page 'High-Level Design (HLD) for Doc and Support Agent V1' (ID: 474021958) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,100 - utils.state_manager - INFO - Skipping page 'Agentic AI Project Information' (ID: 474054705) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,102 - utils.state_manager - INFO - Skipping page 'IUP Route for Metadata Changes - Overall Design' (ID: 474054739) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,102 - utils.state_manager - INFO - Skipping page 'Agentic AI Solution – Repository Structure, Branching, Deployment, and Versioning Strategy' (ID: 474054761) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,103 - utils.state_manager - INFO - Skipping page 'QA Multi-Agent Architecture' (ID: 474185759) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,103 - utils.state_manager - INFO - Skipping page 'Requirement Doc - Backbone to React (ES6 Compatible) using Report API' (ID: 477626611) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,103 - utils.state_manager - INFO - Skipping page 'Requirement Doc - JS to BR' (ID: 477659502) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,105 - utils.state_manager - INFO - Skipping page 'PL/SQL to Emery Hooks Conversion – Requirements Document' (ID: 477659535) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,105 - utils.state_manager - INFO - Skipping page 'Requirement Doc - Backbone to React (ES6 Compatible) using mPower API' (ID: 477888517) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,105 - utils.state_manager - INFO - Skipping page 'Agentic AI Technology Stack' (ID: 478282569) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,105 - utils.state_manager - INFO - Skipping page 'Upgrade AI - JS to BR (Requirement Document)' (ID: 478314851) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,105 - utils.state_manager - INFO - Skipping page 'Upgrade and Designer Activities' (ID: 479035486) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,105 - utils.state_manager - INFO - Skipping page 'Admin UX API & Wrapper API Service' (ID: 481034946) in space 'AgenticAI' - no changes since last processing
+2025-05-04 21:45:55,105 - root - INFO - ==================================================
+2025-05-04 21:45:55,109 - root - INFO - API Response Summary:
+2025-05-04 21:45:55,109 - root - INFO -   Total Pages from API: 27
+2025-05-04 21:45:55,109 - root - INFO - --------------------------------------------------
+2025-05-04 21:45:55,109 - root - INFO - Content Fetching Summary:
+2025-05-04 21:45:55,111 - root - INFO -   Processed: 0
+2025-05-04 21:45:55,111 - root - INFO -   Skipped: 27
+2025-05-04 21:45:55,113 - root - INFO -   Failed: 0
+2025-05-04 21:45:55,113 - root - INFO - --------------------------------------------------
+2025-05-04 21:45:55,113 - root - INFO - HTML Processing:
+2025-05-04 21:45:55,114 - root - INFO -   Processed HTML: 0
+2025-05-04 21:45:55,114 - root - INFO -   Skipped HTML: 27
+2025-05-04 21:45:55,114 - root - INFO -   Failed HTML: 0
+2025-05-04 21:45:55,114 - root - INFO - --------------------------------------------------
+2025-05-04 21:45:55,116 - root - INFO - PDF Processing:
+2025-05-04 21:45:55,116 - root - INFO -   Processed PDF: 0
+2025-05-04 21:45:55,119 - root - INFO -   Skipped PDF: 27
+2025-05-04 21:45:55,119 - root - INFO -   Failed PDF: 0
+2025-05-04 21:45:55,120 - root - INFO - ==================================================

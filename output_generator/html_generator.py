@@ -8,7 +8,7 @@ import base64
 import os
 from pathlib import Path
 
-from setup.config import HTML_OUTPUT_DIR
+from setup.config import HTML_OUTPUT_DIR, NEW_CONTENT_DIR, UPDATED_CONTENT_DIR
 from utils.html_cleaner import clean_html
 from api_client.confluence_client import ConfluenceClient
 
@@ -21,12 +21,13 @@ class HTMLGenerator:
         """Initialize the HTML generator."""
         self.confluence_client = ConfluenceClient()
 
-    def generate_html(self, page, output_path=None):
+    def generate_html(self, page, output_path=None, content_type=None):
         """Generate an HTML file for a Confluence page.
 
         Args:
             page (dict): Page data from the Confluence API
             output_path (str, optional): Custom output path. If None, uses default location.
+            content_type (str, optional): Type of content ('new' or 'updated'). If None, saves to the space directory.
 
         Returns:
             str: Path to the generated HTML file or None if generation failed
@@ -52,7 +53,15 @@ class HTMLGenerator:
                 space_dir = HTML_OUTPUT_DIR / space_key
                 space_dir.mkdir(exist_ok=True)
 
-                output_path = space_dir / f"{safe_title}_{page_id}.html"
+                # If content_type is specified, create and use the appropriate subdirectory
+                if content_type in [NEW_CONTENT_DIR, UPDATED_CONTENT_DIR]:
+                    # Create the content type subdirectory if it doesn't exist
+                    content_type_dir = space_dir / content_type
+                    content_type_dir.mkdir(exist_ok=True)
+
+                    output_path = content_type_dir / f"{safe_title}_{page_id}.html"
+                else:
+                    output_path = space_dir / f"{safe_title}_{page_id}.html"
             else:
                 output_path = Path(output_path)
 

@@ -84,7 +84,7 @@ class HTMLToPDFConverter:
             'enable-local-file-access': '',
             'javascript-delay': '2000',  # Wait 2 seconds for any essential JS
             # JavaScript settings
-            'enable-javascript': True,    # Enable JavaScript for proper image rendering
+            'enable-javascript': False,   # Disable JavaScript to prevent security issues
             'disable-external-links': False,
             'disable-internal-links': False,
             'print-media-type': True,
