@@ -87,10 +87,16 @@ class HTMLGenerator:
                 logger.info(f"HTML saved to {output_path}")
                 return str(output_path)
             except Exception as e:
+                import traceback
+                error_trace = traceback.format_exc()
                 logger.error(f"Failed to generate HTML for page '{page_title}' (ID: {page_id}): {e}")
+                logger.error(f"Stack trace:\n{error_trace}")
                 return None
         except Exception as e:
+            import traceback
+            error_trace = traceback.format_exc()
             logger.error(f"Failed to process page for HTML generation: {e}")
+            logger.error(f"Stack trace:\n{error_trace}")
             return None
 
     def _create_html_document(self, title, content):
@@ -243,7 +249,10 @@ class HTMLGenerator:
 
                 logger.debug(f"Embedded image {filename} in HTML content")
             except Exception as e:
+                import traceback
+                error_trace = traceback.format_exc()
                 logger.error(f"Error embedding image: {e}")
+                logger.error(f"Stack trace for image embedding error:\n{error_trace}")
 
         return html_content
 

@@ -1,2 +1,10 @@
 .env
 setup/config.py
+cookies/
+cookies/confluence_cookies.txt
+cookies/secure_cookies.enc
+cookies/.salt
+__pycache__/
+*.py[cod]
+*$py.class
+logs/*.log

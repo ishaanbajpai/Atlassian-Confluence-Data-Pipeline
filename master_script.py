@@ -82,17 +82,7 @@ def parse_arguments():
         help="Skip checking for pages missing from state file"
     )
 
-    parser.add_argument(
-        "--import_cookies",
-        action="store_true",
-        help="Import cookies from browser to help with CAPTCHA/verification issues"
-    )
-
-    parser.add_argument(
-        "--refresh_cookies",
-        action="store_true",
-        help="Refresh cookies by opening browser and guiding through import"
-    )
+    # No cookie refresh options needed - cookies are managed through a static file
 
     return parser.parse_args()
 
@@ -221,7 +211,10 @@ def process_page(page, state_manager, html_generator, html_to_pdf_converter=None
         return True, stats
 
     except Exception as e:
+        import traceback
+        error_trace = traceback.format_exc()
         logging.error(f"Failed to process page '{page_title}' (ID: {page_id}): {e}")
+        logging.error(f"Stack trace for page processing error:\n{error_trace}")
         stats["html_failed"] += 1
         stats["pdf_failed"] += 1
         return False, stats
@@ -236,19 +229,6 @@ def main():
 
     # Initialize components
     client = ConfluenceClient()
-
-    # Handle cookie operations if requested
-    if args.import_cookies or args.refresh_cookies:
-        from utils.cookie_manager import main as cookie_manager_main
-
-        if args.import_cookies:
-            logger.info("Starting cookie import process...")
-            cookie_manager_main('import')
-            logger.info("Cookie import process completed. Continuing with main script...")
-        elif args.refresh_cookies:
-            logger.info("Starting cookie refresh process...")
-            cookie_manager_main('refresh')
-            logger.info("Cookie refresh process completed. Continuing with main script...")
 
     state_manager = StateManager()
     html_generator = HTMLGenerator()
@@ -601,7 +581,10 @@ def main():
                 logger.info("Skipping check for pages missing from state file (--no_check_missing flag is set)")
 
     except Exception as e:
-        logger.error(f"An error occurred: {e}")
+        import traceback
+        error_trace = traceback.format_exc()
+        logger.error(f"An error occurred in main script execution: {e}")
+        logger.error(f"Stack trace for main script error:\n{error_trace}")
         return 1
 
     # Print summary of content fetching

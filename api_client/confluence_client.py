@@ -4,7 +4,6 @@ Confluence API client for fetching pages and spaces.
 import requests
 import logging
 import random
-import os
 from datetime import datetime, timedelta
 from urllib.parse import urljoin
 import time
@@ -21,20 +20,15 @@ class ConfluenceClient:
         # Store the original URL
         self.original_url = CONFLUENCE_URL
 
-        # Set up cookie paths
-        self.cookie_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "cookies")
-        os.makedirs(self.cookie_dir, exist_ok=True)
-        self.cookie_file = os.path.join(self.cookie_dir, "confluence_cookies.pkl")
-
         # Initialize session
         self._init_session()
 
-        # Try to load saved cookies
-        self._load_cookies()
+        # Initialize secure cookie manager
+        from utils.secure_cookie_manager import SecureCookieManager
+        self.cookie_manager = SecureCookieManager()
 
-        # Track verification status
-        self.verification_needed = False
-        self.last_verification_time = 0
+        # Load cookies from secure storage or prompt for new ones
+        self.cookie_manager.load_cookies_to_session(self.session, self.original_url)
 
         # For Confluence Cloud, the API URL structure is different
         if 'atlassian.net' in CONFLUENCE_URL:
@@ -87,45 +81,15 @@ class ConfluenceClient:
         })
 
     def refresh_session(self):
-        """Refresh the session by reinitializing it.
+        """Refresh the session by reinitializing it and loading cookies from secure storage.
 
         This can help when the session cookies become invalid or expire.
         """
         logger.info("Refreshing API session...")
         self._init_session()
-        self._load_cookies()
-        return True
 
-    def _save_cookies(self):
-        """Save the current session cookies to a file."""
-        from utils.cookie_manager import save_cookies
-        return save_cookies(self.session, self.cookie_file)
-
-    def _load_cookies(self):
-        """Load cookies from file into the current session."""
-        from utils.cookie_manager import load_cookies
-        return load_cookies(self.session, self.cookie_file)
-
-    def import_browser_cookies(self, cookie_text):
-        """Import cookies from browser developer tools.
-
-        Args:
-            cookie_text (str): Cookie header text copied from browser developer tools
-                Format should be like: "cookie1=value1; cookie2=value2; ..."
-
-        Returns:
-            bool: True if cookies were successfully imported, False otherwise
-        """
-        from utils.cookie_manager import import_browser_cookies
-
-        # Import the cookies
-        result = import_browser_cookies(self.session, cookie_text, self.base_url)
-
-        # Save the updated cookies if successful
-        if result:
-            self._save_cookies()
-
-        return result
+        # Load cookies from secure storage
+        return self.cookie_manager.load_cookies_to_session(self.session, self.original_url)
 
     def _make_request(self, endpoint, params=None, method="GET", max_retries=3, retry_delay=2):
         """Make a request to the Confluence API with retry logic.
@@ -167,8 +131,9 @@ class ConfluenceClient:
                 # Log the full URL that was requested (including query parameters)
                 logger.debug(f"Full URL requested: {response.url}")
 
-                # Check for human verification page in the response
-                if "Human Verification" in response.text or "captcha" in response.text.lower():
+                # Check for human verification page in the response or authentication issues
+                if ("Human Verification" in response.text or
+                    "captcha" in response.text.lower()):
                     logger.error("Detected CAPTCHA or human verification challenge")
                     logger.error("The Atlassian server is detecting automated requests")
 
@@ -198,9 +163,23 @@ class ConfluenceClient:
                     logger.error("This could be due to an incorrect API version, endpoint, or the resource doesn't exist.")
                     logger.error(f"Try changing the CONFLUENCE_API_VERSION in your .env file (current: {CONFLUENCE_API_VERSION})")
                 elif status_code == 401:
-                    logger.error("401 Unauthorized: Authentication failed. Check your username and API token.")
+                    logger.error("401 Unauthorized: Authentication failed. Cookies may have expired.")
+                    # Try to refresh cookies
+                    if self._handle_manual_verification(response.url):
+                        # If cookie refresh was successful, retry the request
+                        logger.info("Cookie refresh completed. Retrying request...")
+                        if retry_count < max_retries:
+                            retry_count += 1
+                            continue
                 elif status_code == 403:
-                    logger.error("403 Forbidden: You don't have permission to access this resource.")
+                    logger.error("403 Forbidden: You don't have permission to access this resource or cookies have expired.")
+                    # Try to refresh cookies
+                    if self._handle_manual_verification(response.url):
+                        # If cookie refresh was successful, retry the request
+                        logger.info("Cookie refresh completed. Retrying request...")
+                        if retry_count < max_retries:
+                            retry_count += 1
+                            continue
                 elif status_code == 400:
                     logger.error("400 Bad Request: The request was malformed or contains invalid parameters.")
                 elif status_code == 405:
@@ -244,7 +223,10 @@ class ConfluenceClient:
                 raise
 
             except Exception as e:
-                logger.error(f"Unexpected error: {e}")
+                import traceback
+                error_trace = traceback.format_exc()
+                logger.error(f"Unexpected error in API request: {e}")
+                logger.error(f"Stack trace for API request error:\n{error_trace}")
                 raise
 
         # If we've exhausted all retries
@@ -416,7 +398,10 @@ class ConfluenceClient:
                     # Add a small delay to avoid rate limiting
                     time.sleep(0.5)
                 except Exception as e:
+                    import traceback
+                    error_trace = traceback.format_exc()
                     logger.warning(f"Error fetching updated pages with global query: {e}")
+                    logger.warning(f"Stack trace for global query error:\n{error_trace}")
                     logger.warning("Falling back to per-space queries")
                     updated_pages = []  # Reset the list
                     break
@@ -463,12 +448,18 @@ class ConfluenceClient:
                             # Add a small delay to avoid rate limiting
                             time.sleep(0.5)
                         except Exception as e:
+                            import traceback
+                            error_trace = traceback.format_exc()
                             logger.warning(f"Error fetching updated pages in space '{space_key}': {e}")
+                            logger.warning(f"Stack trace for space query error:\n{error_trace}")
                             # Continue with the next space
                             break
 
         except Exception as e:
+            import traceback
+            error_trace = traceback.format_exc()
             logger.error(f"Failed to fetch updated pages: {e}")
+            logger.error(f"Stack trace for updated pages error:\n{error_trace}")
 
         logger.info(f"Found {len(updated_pages)} pages updated in the last {days} days")
         return updated_pages
@@ -635,85 +626,74 @@ class ConfluenceClient:
             # Return the attachment content
             return response.content
         except Exception as e:
+            import traceback
+            error_trace = traceback.format_exc()
             logger.error(f"Failed to download attachment '{filename}' from page {page_id}: {e}")
+            logger.error(f"Stack trace for attachment download error:\n{error_trace}")
             return None
 
-    def _handle_manual_verification(self, url):
+    def _handle_manual_verification(self, _):
         """Handle manual verification for CAPTCHA challenges.
 
-        This method provides instructions for manually logging in to Confluence
-        and importing cookies to bypass CAPTCHA challenges.
+        This method provides instructions for updating the cookie file
+        to bypass CAPTCHA challenges.
 
         Args:
-            url (str): The URL that triggered the CAPTCHA challenge
+            _ (str): Unused parameter (kept for compatibility)
 
         Returns:
             bool: True if verification was successful, False otherwise
         """
         import webbrowser
-        import time as time_module  # Rename to avoid conflict with time module
-        from datetime import datetime
+        from pathlib import Path
 
         try:
-            # Check if we've recently done verification (within last 5 minutes)
-            current_time = time_module.time()
-            if current_time - self.last_verification_time < 300:  # 300 seconds = 5 minutes
-                logger.warning("Already attempted verification recently. Waiting before trying again...")
-                time.sleep(10)  # Wait 10 seconds before retrying
-                return True
-
-            # Update verification time
-            self.last_verification_time = current_time
-
             # Create a login URL - use the main Confluence URL instead of the API URL
             login_url = self.base_url
 
+            # Get the cookie file path
+            cookie_file = Path("cookies/confluence_cookies.txt")
+
+            # Clear any existing encrypted cookies to force a refresh
+            self.cookie_manager.clear_encrypted_cookies()
+
             # Display instructions to the user
-            logger.info("=" * 80)
-            logger.info("CAPTCHA / HUMAN VERIFICATION REQUIRED")
-            logger.info("=" * 80)
-            logger.info("The Confluence API is detecting automated requests and requiring verification.")
-            logger.info("To resolve this, you need to manually log in to Confluence and import the cookies.")
-            logger.info("")
-            logger.info("Please follow these steps:")
-            logger.info("1. A browser window will open to the Confluence login page")
-            logger.info("2. Log in to Confluence if you're not already logged in")
-            logger.info("3. After logging in, open your browser's developer tools:")
-            logger.info("   - Chrome/Edge: Press F12 or right-click > Inspect")
-            logger.info("   - Firefox: Press F12 or right-click > Inspect Element")
-            logger.info("4. Go to the 'Network' tab in developer tools")
-            logger.info("5. Refresh the page")
-            logger.info("6. Click on any request to confluence.atlassian.net")
-            logger.info("7. In the request headers, find the 'Cookie:' header")
-            logger.info("8. Copy the entire cookie string (it's long!)")
-            logger.info("9. Return to this terminal and paste the cookie string when prompted")
-            logger.info("=" * 80)
+            logger.error("=" * 80)
+            logger.error("CAPTCHA / HUMAN VERIFICATION REQUIRED")
+            logger.error("=" * 80)
+            logger.error("The Confluence API is detecting automated requests and requiring verification.")
+            logger.error("You need to update the cookie file with fresh cookies.")
+            logger.error("")
+            logger.error("Please follow these steps:")
+            logger.error("1. Open your browser and go to your Confluence site")
+            logger.error("2. Log in to Confluence if you're not already logged in")
+            logger.error("3. Open your browser's developer tools:")
+            logger.error("   - Chrome/Edge: Press F12 or right-click > Inspect")
+            logger.error("   - Firefox: Press F12 or right-click > Inspect Element")
+            logger.error("4. Go to the 'Network' tab in developer tools")
+            logger.error("5. Refresh the page")
+            logger.error("6. Click on any request to confluence.atlassian.net")
+            logger.error("7. In the request headers, find the 'Cookie:' header")
+            logger.error("8. Copy the entire cookie string (it's long!)")
+            logger.error(f"9. Open the file: {cookie_file.absolute()}")
+            logger.error("10. Replace the content with your copied cookie string")
+            logger.error("11. Save the file and run the script again")
+            logger.error("")
+            logger.error("IMPORTANT: For security, the cookie file will be cleared after loading.")
+            logger.error("Your cookies will be encrypted and stored securely.")
+            logger.error("=" * 80)
 
             # Open the login URL in the default browser
             webbrowser.open(login_url)
 
-            # Wait for user to log in and copy cookies
-            logger.info("After logging in and copying the cookies, paste them below:")
-            cookie_text = input("Paste the cookie string here (or type 'skip' to continue without cookies): ")
-
-            if cookie_text.lower() == 'skip':
-                logger.warning("Skipping cookie import. API requests may still fail.")
-                return False
-
-            # Import the cookies
-            if self.import_browser_cookies(cookie_text):
-                logger.info("Successfully imported browser cookies. Resuming API requests...")
-
-                # Add a short delay to allow cookies to be properly set
-                time.sleep(2)
-
-                return True
-            else:
-                logger.error("Failed to import browser cookies. API requests may still fail.")
-                return False
+            # Return False to indicate that manual intervention is required
+            return False
 
         except Exception as e:
+            import traceback
+            error_trace = traceback.format_exc()
             logger.error(f"Error during manual verification: {e}")
+            logger.error(f"Stack trace for manual verification error:\n{error_trace}")
             return False
 
 

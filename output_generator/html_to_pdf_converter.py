@@ -158,7 +158,10 @@ class HTMLToPDFConverter:
                 return None
 
         except Exception as e:
+            import traceback
+            error_trace = traceback.format_exc()
             logger.error(f"Failed to convert HTML to PDF: {e}")
+            logger.error(f"Stack trace for PDF conversion error:\n{error_trace}")
             return None
 
     def convert_string(self, html_content, pdf_path):
@@ -210,7 +213,10 @@ class HTMLToPDFConverter:
                 return None
 
         except Exception as e:
+            import traceback
+            error_trace = traceback.format_exc()
             logger.error(f"Failed to convert HTML content to PDF: {e}")
+            logger.error(f"Stack trace for PDF content conversion error:\n{error_trace}")
             return None
 
 

@@ -20,7 +20,7 @@ A modular Python program to fetch Confluence pages and spaces using the Confluen
 ├── output_generator/      # Code to generate PDF/HTML outputs
 ├── utils/                 # Utility functions, logging, state management
 ├── setup/                 # Configuration files (e.g., API URLs, credentials)
-├── output/                # Output directory for generated files
+├── confluence_output/     # Output directory for generated files
 │   ├── pdf/               # PDF output files
 │   └── html/              # HTML output files
 ├── logs/                  # Log files
@@ -225,8 +225,8 @@ Code blocks from Confluence are processed to ensure proper formatting:
 
 The program uses native HTML to PDF conversion for all documents. The Atlassian PDF export functionality has been removed as it was not working reliably. Here's how the current HTML to PDF conversion works:
 
-1. HTML files are saved to `output/html/{space_key}/` directory
-2. PDF files are generated from HTML and saved to `output/pdf/{space_key}/` directory
+1. HTML files are saved to `confluence_output/html/{space_key}/` directory
+2. PDF files are generated from HTML and saved to `confluence_output/pdf/{space_key}/` directory
 3. Both paths are tracked in the state file
 
 You can control this behavior with the following options:
@@ -264,17 +264,17 @@ python html_to_pdf.py [input] [options]
 
 1. Convert a single HTML file to PDF:
    ```
-   python html_to_pdf.py output/html/MFS/page.html
+   python html_to_pdf.py confluence_output/html/MFS/page.html
    ```
 
 2. Convert all HTML files in a directory to PDF:
    ```
-   python html_to_pdf.py output/html/MFS --output output/pdf/MFS
+   python html_to_pdf.py confluence_output/html/MFS --output confluence_output/pdf/MFS
    ```
 
 3. Convert all HTML files recursively:
    ```
-   python html_to_pdf.py output/html --output output/pdf --recursive
+   python html_to_pdf.py confluence_output/html --output confluence_output/pdf --recursive
    ```
 
 ## License
