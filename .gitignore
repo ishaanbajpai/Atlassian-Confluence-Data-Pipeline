@@ -1,10 +1,19 @@
 .env
 setup/config.py
-cookies/
-cookies/confluence_cookies.txt
-cookies/secure_cookies.enc
-cookies/.salt
+
+# Exclude cookie files but keep the directory
+cookies/*
+!cookies/.gitkeep
+
+# Exclude output directories
+output/
+confluence_output/
+
+# Python cache files
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Log files
 logs/*.log
+!logs/.gitkeep
