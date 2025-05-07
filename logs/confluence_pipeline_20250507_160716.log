@@ -1,7 +1,0 @@
-2025-05-07 16:07:16,710 - root - INFO - Logging initialized. Log file: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\logs\confluence_pipeline_20250507_160716.log
-2025-05-07 16:07:16,783 - utils.cookie_manager - INFO - No saved cookies found
-2025-05-07 16:07:16,783 - api_client.confluence_client - DEBUG - Using base URL: https://metricstream.atlassian.net/wiki
-2025-05-07 16:07:16,783 - api_client.confluence_client - DEBUG - Using API URL: https://metricstream.atlassian.net/wiki/rest/api
-2025-05-07 16:07:16,783 - root - INFO - Starting cookie import process...
-2025-05-07 16:07:16,789 - root - INFO - Logging initialized. Log file: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\logs\confluence_pipeline_20250507_160716.log
-2025-05-07 16:07:16,789 - root - INFO - Logging initialized. Log file: C:\Users\DELL\Documents\augment-projects\Atlassian Confluence Data Pipeline\logs\confluence_pipeline_20250507_160716.log
