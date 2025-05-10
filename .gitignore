@@ -1,5 +1,4 @@
 .env
-setup/config.py
 
 # Exclude cookie files but keep the directory
 cookies/*
