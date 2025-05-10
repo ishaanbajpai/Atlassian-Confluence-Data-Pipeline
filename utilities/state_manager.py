@@ -5,7 +5,7 @@ import json
 import logging
 from pathlib import Path
 
-from setup.config import STATE_FILE
+from setup.config_conf import STATE_FILE
 
 logger = logging.getLogger(__name__)
 

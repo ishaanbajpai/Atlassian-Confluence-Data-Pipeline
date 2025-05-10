@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 from urllib.parse import urljoin
 import time
 
-from setup.config import CONFLUENCE_URL, CONFLUENCE_API_TOKEN, CONFLUENCE_USERNAME, CONFLUENCE_API_VERSION
+from setup.config_conf import CONFLUENCE_URL, CONFLUENCE_API_TOKEN, CONFLUENCE_USERNAME, CONFLUENCE_API_VERSION
 
 logger = logging.getLogger(__name__)
 
@@ -24,7 +24,7 @@ class ConfluenceClient:
         self._init_session()
 
         # Initialize secure cookie manager
-        from utils.secure_cookie_manager import SecureCookieManager
+        from utilities.secure_cookie_manager import SecureCookieManager
         self.cookie_manager = SecureCookieManager()
 
         # Load cookies from secure storage or prompt for new ones

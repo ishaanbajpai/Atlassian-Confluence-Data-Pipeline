@@ -4,7 +4,7 @@ Handles image URLs and code blocks properly.
 """
 import logging
 from bs4 import BeautifulSoup
-from setup.config import CONFLUENCE_URL
+from setup.config_conf import CONFLUENCE_URL
 
 logger = logging.getLogger(__name__)
 

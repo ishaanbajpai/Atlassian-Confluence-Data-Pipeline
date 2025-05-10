@@ -11,9 +11,9 @@ import time
 from api_client.confluence_client import ConfluenceClient
 from output_generator.html_generator import HTMLGenerator
 from output_generator.html_to_pdf_converter import HTMLToPDFConverter
-from utils.state_manager import StateManager
-from utils.logger import setup_logging
-from setup.config import DEFAULT_DAYS, NEW_CONTENT_DIR, UPDATED_CONTENT_DIR
+from utilities.state_manager import StateManager
+from utilities.logger import setup_logging
+from setup.config_conf import DEFAULT_DAYS, NEW_CONTENT_DIR, UPDATED_CONTENT_DIR
 
 def parse_arguments():
     """Parse command-line arguments.
@@ -158,7 +158,7 @@ def process_page(page, state_manager, html_generator, html_to_pdf_converter=None
         if not html_only and html_to_pdf_converter:
             # Create PDF directory structure mirroring HTML structure
             from pathlib import Path
-            from setup.config import PDF_OUTPUT_DIR
+            from setup.config_conf import PDF_OUTPUT_DIR
 
             # Get the space directory name and subdirectory (if any) from the HTML path
             html_path_obj = Path(html_path)

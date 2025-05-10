@@ -8,8 +8,8 @@ import base64
 import os
 from pathlib import Path
 
-from setup.config import HTML_OUTPUT_DIR, NEW_CONTENT_DIR, UPDATED_CONTENT_DIR
-from utils.html_cleaner import clean_html
+from setup.config_conf import HTML_OUTPUT_DIR, NEW_CONTENT_DIR, UPDATED_CONTENT_DIR
+from utilities.html_cleaner import clean_html
 from api_client.confluence_client import ConfluenceClient
 
 logger = logging.getLogger(__name__)
